@@ -1,2 +1,4 @@
 Test
 =====
+.. autosummary::
+   :toctree: generated
