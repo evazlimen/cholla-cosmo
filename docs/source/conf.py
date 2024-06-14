@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'Cholla-Cosmo'
+copyright = '2024, UCSC Comp Astro Research Group'
+author = 'UCSC Comp Astro Research Group'
 
 release = '0.1'
 version = '0.1.0'
