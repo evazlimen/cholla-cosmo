@@ -24,3 +24,4 @@ Contents
    usage
    api
    test
+   building_music_ics
