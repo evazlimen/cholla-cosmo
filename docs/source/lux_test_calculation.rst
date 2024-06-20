@@ -3,6 +3,7 @@ Running a test calculation on Lux
 After cloning cholla, we will need to add the updated (as of 6/20/2024) setup and host files.
 
 Add setup.lux.sh to the cholla/ directory:
+
 .. literalinclude:: ../setup_files/setup.lux.sh
   :language: shell
 
