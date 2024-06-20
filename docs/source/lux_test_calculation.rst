@@ -21,7 +21,9 @@ Add ``make.host.lux`` to the cholla/builds/ directory:
 Create a directory outside of cholla/ to run the test calculation in. We'll call this run/
 
 In the cholla/ directory, run
+
 ``source setup.lux.sh``
+
 ``sh make_cholla.sh``
 
 You should now have ``cholla.cosmology.lux`` in cholla/bin/.
