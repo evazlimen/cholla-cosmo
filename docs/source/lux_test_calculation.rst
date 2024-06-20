@@ -40,7 +40,7 @@ Add parameter_file.txt
 .. literalinclude:: ../setup_files/parameter_file.txt
   :language: text
 
-We also need to add the directory containing the initial conditions (ics_2_z100) and other inputs (input). (Links to be added)
+We also need to add the directory containing the initial conditions (ics_2_z100, to be added) and ``cholla-cosmo/docs/setup_files/input``
 
 Link the executable:
 ``ln -s /cholla-path/cholla/bin/cholla.cosmology.lux``
