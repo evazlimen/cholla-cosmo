@@ -45,6 +45,6 @@ We also need to add the directory containing the initial conditions (ics_2_z100)
 Link the executable:
 ``ln -s /cholla-path/cholla/bin/cholla.cosmology.lux``
 
-After getting a GPU node on lux, and ensuring that we are in the run/ directory, we can run the code by using ``./run.sh``
+After getting a GPU node on Lux, and ensuring that we are in the run/ directory, we can run the code by using ``./run.sh``
 
-A shell script to get a GPU node will be added shortly
+See ``cosmo-cholla/setup_files/gpuq.sh`` for an example of how to get a node on Lux.

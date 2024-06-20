@@ -1,0 +1,1 @@
+srun -N 1 -n 40 --partition=gpuq --account=gpuq --pty bash -i
