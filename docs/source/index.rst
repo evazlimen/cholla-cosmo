@@ -25,3 +25,4 @@ Contents
    api
    test
    building_music_ics
+   lux_test_calculation
