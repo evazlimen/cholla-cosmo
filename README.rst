@@ -1,9 +1,4 @@
-Template for the Read the Docs tutorial
+Documentation for the cosmological features of Cholla
 =======================================
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
-
-Read the tutorial here:
-
-https://docs.readthedocs.io/en/stable/tutorial/
+Cholla can be found here: https://github.com/cholla-hydro/cholla
