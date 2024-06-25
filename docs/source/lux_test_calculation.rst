@@ -40,12 +40,14 @@ In the run/ directory:
 .. literalinclude:: ../setup_files/parameter_file.txt
   :language: text
 
-8. We also need to add the directory containing the initial conditions (ics_2_z100, to be added) and ``cholla-cosmo/docs/setup_files/input`` 
 
-9. Link the executable:
+
+If the path for indir is not working, there is a copy of the input directory in this repo, in ``cholla-cosmo/docs/setup_files/input``
+
+8. Link the executable:
 ``ln -s /cholla-path/cholla/bin/cholla.cosmology.lux``
 
-10. Run the code
+9. Run the code
 After getting a GPU node on Lux, and ensuring that we are in the run/ directory, we can run the code by using ``./run.sh``
 
 See ``cosmo-cholla/setup_files/gpuq.sh`` for an example of how to get a node on Lux.
