@@ -61,3 +61,17 @@ See ``cosmo-cholla/setup_files/gpuq.sh`` for an example of how to get a node on 
 
 Outputs
 ------
+
+After the simulation is complete (~ 1 minute), there will be one set of outputs (in run/data/1) which consists of six hdf5 files:
+
+- 1_gravity.h5.0
+- 1_gravity.h5.1
+- 1.h5.0
+- 1.h5.1
+- 1_particles.h5.0
+- 1_particles.h5.1
+
+As there is one type of output (gravity, hydro, particles) per processor, we need to concatenate each type. This can be done by using the python scripts within ``cholla/python_scripts``.
+
+
+
