@@ -23,7 +23,7 @@ H0=67.66
 Omega_M=0.3111
 Omega_L=0.6889
 Omega_b=0.0497
-scale_outputs_file=./input/output_a_values.txt
+scale_outputs_file=/data/groups/comp-astro/cholla/run.ics_2_z100.adiabatic/input/output_a_values.txt
 # domain properties
 xmin=0.0
 ymin=0.0
@@ -39,7 +39,7 @@ yu_bcnd=1
 zl_bcnd=1
 zu_bcnd=1
 # path to output directory
-indir=./ics_2_z100/
+indir=/data/groups/comp-astro/cholla/run.ics_2_z100.adiabatic
 outdir=./data
 # UVB photoionization and photoheating rates
-UVB_rates_file=./input/uvb_rates_V22.txt
+UVB_rates_file=/data/groups/comp-astro/cholla/run.ics_2_z100.adiabatic/input/uvb_rates_V22.txt
