@@ -44,10 +44,13 @@ In the run/ directory:
 
 If the path for scale_outputs_file and UVB_rates_file is not working, there is a copy of the input directory in which these files are located in this repo, in ``cholla-cosmo/docs/setup_files/input``.
 
-8. Link the executable:
-``ln -s /cholla-path/cholla/bin/cholla.cosmology.lux``
+8. Link the executable (still within the /run directory):
+``ln -s /path-to-cholla/cholla/bin/cholla.cosmology.lux``
 
-9. Run the code
+9. Create an output directory, ``data``.
+
+10. Run the code
+
 After getting a GPU node on Lux, and ensuring that we are in the run/ directory, we can run the code by using ``./run.sh``
 
 See ``cosmo-cholla/setup_files/gpuq.sh`` for an example of how to get a node on Lux.
