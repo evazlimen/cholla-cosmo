@@ -42,7 +42,7 @@ In the run/ directory:
 
 
 
-If the path for indir is not working, there is a copy of the input directory in this repo, in ``cholla-cosmo/docs/setup_files/input``
+If the path for scale_outputs_file and UVB_rates_file is not working, there is a copy of the input directory in which these files are located in this repo, in ``cholla-cosmo/docs/setup_files/input``.
 
 8. Link the executable:
 ``ln -s /cholla-path/cholla/bin/cholla.cosmology.lux``
