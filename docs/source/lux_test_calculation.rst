@@ -7,7 +7,7 @@ After cloning Cholla, we will need to update a few things (as of 6/20/2024).
 
 1. In ``cholla/builds/make.type.hydro``, we need to make sure that the spatial reconstruction method is PPMP (not PLMC, which fails on Lux with this version of the code). This is the third flag down. 
 
-We also need to add some setup and host files. These can all be found in ``cholla-cosmo/docs/setup_files``.
+We also need to add some setup and host files. These can all be found in the repo for this site `here <https://github.com/evazlimen/cholla-cosmo/tree/main/docs/setup_files`_.
 
 2. Add ``setup.lux.sh`` to the cholla/ directory:
 
