@@ -62,7 +62,7 @@ See ``cosmo-cholla/setup_files/gpuq.sh`` for an example of how to get a node on 
 Outputs
 ------
 
-After the simulation is complete (~ 1 minute), there will be one set of outputs (in run/data/1). In general, a directory will be created inside of the ``run/data`` directory for each output time. Here we find six hdf5 files:
+After the simulation is complete (~ 1 minute), there will be one set of outputs (in run/data/1). In general, a directory will be created inside of the ``run/data`` directory for each output time given in the scale outputs file. Here we find six hdf5 files:
 
 - 1_gravity.h5.0
 - 1_gravity.h5.1
