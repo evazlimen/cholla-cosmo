@@ -71,7 +71,21 @@ After the simulation is complete (~ 1 minute), there will be one set of outputs 
 - 1_particles.h5.0
 - 1_particles.h5.1
 
-As there is one type of output (gravity, hydro, particles) per processor, we need to concatenate each type. This can be done by using the python scripts provided in the main Cholla repo, within ``cholla/python_scripts``.
+As there is one type of output (gravity, hydro, particles) per processor, we need to concatenate each type. This can be done by using the python scripts provided in the main Cholla repo, within ``cholla/python_scripts``. If you have the files concat_3d_data.py, concat_internals.py, and concat_particles.py from ``cholla/python_scripts`` either in your run directory or added to your path, you can run the concatenation with ``sbatch concat_h5.sbatch``.
+
+concat_h5.sbatch is provided below and also included in ``cholla-cosmo/docs/visualizations``.
+
+.. literalinclude:: ../visualizations/concat_h5.sbatch
+  :language: sbatch
+
+Note that NUM is set to 1 as there was only one output time, and we set -n 2 as there were two processors.
+
+This will concatentate 1.h5.0 and 1.h5.1 into 1.h5, the complete hydro data file. 1_particles.h5.0 and 1_particles.h5.1 will be concatentated into 1_particles.h5, the complete particle data file. From here, we can visualize the results. An example notebook is provided in ``cholla-cosmo/docs/visualizations`` and the density projection along the z-axis of the hydro data is shown below.
+
+.. image:: ../visualizations/hydro_density.png
+  :width: 400
+  :alt: A 2D histogram showing density fluctuations over a 120 by 120 cell square.
+
 
 
 
