@@ -1,5 +1,5 @@
 #
-# Parameter File for the 3D Cosmological Dark Matter Only.
+# Parameter File for the 3D Cosmological Hydro.
 #
 
 ######################################
@@ -23,7 +23,7 @@ H0=67.66
 Omega_M=0.3111
 Omega_L=0.6889
 Omega_b=0.0497
-scale_outputs_file=/data/groups/comp-astro/cholla/run.ics_2_z100.adiabatic/input/output_a_values.txt
+scale_outputs_file=/path-to-cholla/cholla/scale_output_files/outputs_single_output_z0.txt
 # domain properties
 xmin=0.0
 ymin=0.0
@@ -42,4 +42,4 @@ zu_bcnd=1
 indir=/data/groups/comp-astro/cholla/ics_2_z100/
 outdir=./data
 # UVB photoionization and photoheating rates
-UVB_rates_file=/data/groups/comp-astro/cholla/run.ics_2_z100.adiabatic/input/uvb_rates_V22.txt
+UVB_rates_file=/path-to-cholla/cholla/src/chemistry_gpu/uvb_rates_V21.txt
