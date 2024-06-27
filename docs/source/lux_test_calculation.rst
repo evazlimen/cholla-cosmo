@@ -2,7 +2,7 @@ Running a test calculation on Lux
 =====
 Run
 -----
-Build information can be found in :ref:`build-lux`
+For build information, go to :ref:`build-lux`
 
 1. Create a directory outside of cholla/ to run the test calculation in. We'll call this run/
 
