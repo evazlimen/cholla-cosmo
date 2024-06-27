@@ -15,6 +15,7 @@ To use Cholla, first clone the repository
 The existing Cholla wiki (https://github.com/cholla-hydro/cholla/wiki) can be used to help set up Cholla.
 
 .. _build-lux:
+
 How to build Cholla on Lux
 --------------------------
 Log into Cholla
