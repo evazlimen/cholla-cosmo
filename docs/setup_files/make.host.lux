@@ -1,4 +1,4 @@
-#-- make.inc for the Shamrock Server
+#-- make.inc for the Lux Server
 
 #-- Compiler and flags for different build type
 CXX               = mpicxx
