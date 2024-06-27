@@ -7,7 +7,7 @@ After cloning Cholla, we will need to update a few things (as of 6/20/2024).
 
 1. In ``cholla/builds/make.type.hydro``, we need to make sure that the spatial reconstruction method is PPMP (not PLMC, which fails on Lux with this version of the code). This is the third flag down. 
 
-We also need to add some setup and host files. These can all be found in the repo for this site: https://github.com/evazlimen/cholla-cosmo/tree/main/docs/setup_files
+We also need to add some setup and host files. These can all be found in the repo for this `website <https://github.com/evazlimen/cholla-cosmo/tree/main/docs/setup_filesl>`_.
 
 2. Add ``setup.lux.sh`` to the cholla/ directory:
 
@@ -47,7 +47,7 @@ In the run/ directory:
   :language: text
 
 
-If the path for scale_outputs_file and UVB_rates_file is not working, there is a copy of the input directory in which these files are located in this repo: https://github.com/evazlimen/cholla-cosmo/tree/main/docs/setup_files/input.
+If the path for scale_outputs_file and UVB_rates_file is not working, there is a copy of the input directory in which these files are located `here <https://github.com/evazlimen/cholla-cosmo/tree/main/docs/setup_files/input>`_.
 
 9. Link the executable (still within the /run directory): ``ln -s /path-to-cholla/cholla/bin/cholla.cosmology.lux``
 
@@ -80,7 +80,7 @@ concat_h5.sbatch is provided below and also included in ``cholla-cosmo/docs/visu
 
 Note that NUM is set to 1 as there was only one output time, and we set -n 2 as there were two processors.
 
-This will concatentate 1.h5.0 and 1.h5.1 into 1.h5, the complete hydro data file. 1_particles.h5.0 and 1_particles.h5.1 will be concatentated into 1_particles.h5, the complete particle data file. From here, we can visualize the results. An example notebook is provided in this repo (https://github.com/evazlimen/cholla-cosmo/tree/main/docs/visualizations) and the density projection along the z-axis of the hydro data is shown below.
+This will concatentate 1.h5.0 and 1.h5.1 into 1.h5, the complete hydro data file. 1_particles.h5.0 and 1_particles.h5.1 will be concatentated into 1_particles.h5, the complete particle data file. From here, we can visualize the results. An example notebook is provided `here <https://github.com/evazlimen/cholla-cosmo/tree/main/docs/visualizations>`_ and the density projection along the z-axis of the hydro data is shown below.
 
 .. image:: ../visualizations/hydro_density.png
   :width: 400
