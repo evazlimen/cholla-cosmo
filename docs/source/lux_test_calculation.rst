@@ -1,3 +1,5 @@
+.. _cholla-test-run:
+
 Running a test calculation on Lux
 =====
 Run
