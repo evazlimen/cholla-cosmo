@@ -1,7 +1,19 @@
-#!/bin/bash
+#-- make.inc for the Shamrock Server
 
-###module load hdf5/1.10.6 cuda10.2/10.2 openmpi/4.0.1
-module load hdf5/1.10.6 cuda11.2 openmpi/4.1.5 devtoolset-9
+#-- Compiler and flags for different build type
+CXX               = mpicxx
+CXXFLAGS_DEBUG    = -g -O0 -std=c++17
+CXXFLAGS_OPTIMIZE = -Ofast -std=c++17
+GPUFLAGS         = -std=c++17
 
-export MACHINE=lux
-export CHOLLA_ENVSET=1
+OMP_NUM_THREADS = 10
+
+#-- Library
+CUDA_ROOT    = /cm/shared/apps/cuda11.2/toolkit/current
+HDF5_ROOT    = /cm/shared/apps/hdf5/1.10.6
+FFTW_ROOT    = /home/brvillas/code/fftw-3.3.8
+PFFT_ROOT    = /data/groups/comp-astro/bruno/code_mpi_local/pfft
+GRACKLE_ROOT = /home/brvillas/code/grackle
+
+#Paris does not do GPU_MPI transfers
+PARIS_MPI_GPU = -DPARIS_NO_GPU_MPI
