@@ -56,7 +56,7 @@ We also need to add some setup and host files. These can all be found in the rep
 
 You should now have ``cholla.cosmology.lux`` in cholla/bin/.
 
-An example run can be found in :ref:`Cholla-Example-Run`
+An example run can be found in :ref:`cholla-test-run`
 
 
 How to build Cholla on Frontier
