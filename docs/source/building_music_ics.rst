@@ -61,7 +61,7 @@ Here is an example from ``/lustre/orion/ast206/proj-shared/ics/testing/1024-50Mp
 Convert the MUSIC ICs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-On frontier I made a python3 virtual environment.  After sourcing the choll frontier build setup file, this is the python3:
+On ``frontier`` I made a python3 virtual environment.  After sourcing the Cholla frontier build setup file, this is the python3:
 
 ``/opt/cray/pe/python/3.9.13.1/bin/python3``
 
