@@ -47,7 +47,7 @@ In the run/ directory:
   :language: text
 
 
-A full explanation of the required parameters is given `here <https://github.com/cholla-hydro/cholla/wiki/Input-File-Parameters>`_. Additional cosmological parameters can be set if desired. If the path for scale_outputs_file and UVB_rates_file is not working, there is a copy of the input directory in which these files are located `here <https://github.com/evazlimen/cholla-cosmo/tree/main/docs/setup_files/input>`_.
+A full explanation of the required parameters is given `here <https://github.com/cholla-hydro/cholla/wiki/Input-File-Parameters>`_. Additional cosmological parameters can be set if desired. Note that you must add the path to your installation of Cholla for the scale_outputs_file and UVB_rates_file. The scale_outputs_file simply has a list of scale factors at which outputs are written to hdf5 files. For this example, there is a single output when a=1. 
 
 
 9. Link the executable (still within the /run directory): ``ln -s /path-to-cholla/cholla/bin/cholla.cosmology.lux``
