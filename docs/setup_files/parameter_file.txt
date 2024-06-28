@@ -43,3 +43,7 @@ indir=/data/groups/comp-astro/cholla/ics_2_z100/
 outdir=./data
 # UVB photoionization and photoheating rates
 UVB_rates_file=/path-to-cholla/cholla/src/chemistry_gpu/uvb_rates_V21.txt
+# density floor
+density_floor=1.0e-05
+# temperature floor
+temperature_floor=1.0e-03
