@@ -113,14 +113,54 @@ Next we compile the program with make using the ``TYPE`` flag of cosmology and t
 
     [cholla]$ make HOST=frontier TYPE=cosmology -j 20
 
-where the ``-j`` flag specifies to use 20 cores for compilation. 
+where the ``-j`` flag specifies to use 20 cores for compilation. From this command, there will be a binary executable in the ``bin`` directory. The ``HOST`` flag will tell the Makefile to include ``builds/make.host.frontier`` and the ``TYPE`` flag tells the Makefile to include ``builds/make.type.cosmology`` when compiling the program. The ``builds/make.host.frontier`` file will define the compiler as well as helpful compiler flags. It will also provide information regarding the root path to MPI, FFTW, and GOOGLETEST. The ``builds/make.type.cosmology`` file will provide additional macro flags that will specify to the source code to build the program for cosmology.
 
-From this command, there will be a binary file in ``bin``
+Cosmology Flags
+^^^^^^^^^^^^^^^
 
-.. code-block:: console
-    [cholla]$ ls bin
-    cholla.cosmology.frontier
+**TODO: PROVIDE DESCRIPTION FOR ALL MACRO FLAGS INCLUDED IN MAKE.TYPE.COSMOLOGY**
 
+Running Cholla
+^^^^^^^^^^^^^^
+
+The project directory for the cosmological simulations study is saved at ``/lustre/orion/ast206/``. The simulation runs are computed and saved within the project directory in ``/lustre/orion/ast206/proj-shared/runs``. Within this directory, subdirectories should be created with the following naming scheme ``[dims3]_[boxsize]_[uvb-rate]_[descr1]_[descr2]``. With this scheme, ``dims3`` is the number of cells in one dimension, ``boxsize`` is the physical size of one dimension, and ``uvb-rate`` details the UV-background rate, and ``descrX`` is just any extra descriptors of the specific simulation run.
+
+For example, the subdirectory ``2048_50Mpc_v22_dmo`` is a simulation of 2048^3 total cells in which one side is 50 Mpc with a v22 UV-background rate ran on only dark matter.
+
+After creating a directory to hold information for a specific simulation run, we have to prepare some input files in this directory before running a batch script using Slurm.
+
+* **ics**: this is a symbolic link to the initial conditions for the simulation (a set of different initial conditions are currently being held in ``/lustre/orion/ast206/proj-shared-ics/``)
+* **param.txt**: this is a `parameter text file <https://github.com/cholla-hydro/cholla/wiki/Input-File-Parameters>`_ that holds the input information required for Cholla to run a simulation box
+* **data**: this is a directory to hold the output snapshots
+* **scale_outputs.txt**: this is a text file that holds the scale factor at which to save snapshots
+* **uvb_rates.h5**: this is an hdf5 file that contains details for the UV-background rate
+
+With these details, we can finally detail the batch script with this template slurm file:
+
+.. literalinclude:: ../setup_files/2048-50Mpc-v22.slurm
+  :language: shell
+
+
+The Slurm directive flags detail:
+* ``-J``: the job name
+* ``-N``: number of compute nodes requested
+* ``-t``: walltime requested
+* ``-A``: OLCF project to charge
+* ``-o``: standard output file for the job (``%j`` is placeholder for job number)
+
+After setting the location to the Cholla executable and running the frontier setup file, the script exports some helpful macros. The script will set both ``MPICH_ALLTOALL_SYNC_FREQ`` (details `here <https://cpe.ext.hpe.com/docs/mpt/mpich/intro_mpi_ucx.html>`_) and ``MPICH_OFI_CXI_COUNTER_REPORT`` (details `here <https://cpe.ext.hpe.com/docs/mpt/mpich/intro_mpi.html>`_) to 2. It will also set ``OMP_NUM_THREADS`` (details `here <https://www.openmp.org/spec-html/5.0/openmpse50.html>`_) to 7.
+
+Next, the script will redirect the environment variables into a ``job.environ`` file. It will also place the ``SLURM_JOB_NODELIST`` environment variable, listing the name of all host names line-by-line, into a ``job.nodes`` file. The script will also print all shared object dependencies of the Cholla executable into a ``job.exec.ldd`` file.
+
+Finally, the script will call ``srun`` on the Cholla executable and the parameter text file with the following flags
+* ``-u``: executable is run with a pseudo terminal such that the output is not buffered
+* ``-N``: number of nodes
+* ``-n``: total number of MPI tasks
+* ``-c``: CPU cores per MPI task
+* ``--gpu-bind=closest``: binds each task to GPU on same NUMA domain as MPI rank's CPU core
+* ``--gpus-per-task``: number of GPUs to use on each task
+
+The last part of the ``srun`` pipes the executable output and calls ``tee`` which will read from the standard input and write to standard output specified to a file called ``STDOUT``.
 
 
 [in development]
