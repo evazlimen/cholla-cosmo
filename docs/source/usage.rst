@@ -133,7 +133,8 @@ After creating a directory to hold information for a specific simulation run, we
 * **param.txt**: this is a `parameter text file <https://github.com/cholla-hydro/cholla/wiki/Input-File-Parameters>`_ that holds the input information required for Cholla to run a simulation box
 * **data**: this is a directory to hold the output snapshots
 * **scale_outputs.txt**: this is a text file that holds the scale factor at which to save snapshots
-* **uvb_rates.h5**: this is an hdf5 file that contains details for the UV-background rate
+* **uvb_rates_V22.txt**: this is an hdf5 file that contains details for the UV-background rate
+
 
 With these details, we can finally detail the batch script with this template slurm file:
 
@@ -142,6 +143,7 @@ With these details, we can finally detail the batch script with this template sl
 
 
 The Slurm directive flags detail:
+
 * ``-J``: the job name
 * ``-N``: number of compute nodes requested
 * ``-t``: walltime requested
@@ -153,6 +155,7 @@ After setting the location to the Cholla executable and running the frontier set
 Next, the script will redirect the environment variables into a ``job.environ`` file. It will also place the ``SLURM_JOB_NODELIST`` environment variable, listing the name of all host names line-by-line, into a ``job.nodes`` file. The script will also print all shared object dependencies of the Cholla executable into a ``job.exec.ldd`` file.
 
 Finally, the script will call ``srun`` on the Cholla executable and the parameter text file with the following flags
+
 * ``-u``: executable is run with a pseudo terminal such that the output is not buffered
 * ``-N``: number of nodes
 * ``-n``: total number of MPI tasks
@@ -161,6 +164,8 @@ Finally, the script will call ``srun`` on the Cholla executable and the paramete
 * ``--gpus-per-task``: number of GPUs to use on each task
 
 The last part of the ``srun`` pipes the executable output and calls ``tee`` which will read from the standard input and write to standard output specified to a file called ``STDOUT``.
+
+The last two commented out lines in the script detail how to start a simulation run from a snapshot (here, snapshot 167).
 
 
 [in development]
