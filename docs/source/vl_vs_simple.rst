@@ -38,7 +38,7 @@ Algorithm
 
 .. _vl:
 
- Overview of the VL integrator
+Overview of the VL integrator
 --------------------------
 
 The Van Leer (VL) integrator ``src/integrators/VL3D_cuda.cu`` takes as arguments the conserved quantities, device and host gravitational potential, the box's cell location information, the boundaries, the time step, and density floor.
