@@ -75,4 +75,27 @@ Algorithm
 
 13. If using dual energy, we call ``Select_Internal_Energy_3D()`` and ``Synch_Energies_3D()`` using the updated conserved variables ``dev_conserved``.  A ``GPU_Error_Check()`` is called.
 
+.. _dual_energy:
+
+
+Overview of Dual Energy functions
+--------------------------
+
+There are four main dual energy functions that are used by the integrators. Here we provide a brief description of each function.
+
+``Get_Pressure_From_DE()``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+``Partial_Update_Advected_Internal_Energy_3D()``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This function is defined in ``hydro/hydro_cuda.cu``.  It takes a conserved variable array ``dev_conserved``, the interface states (e.g., ``Q_Lx`` and ``Q_Rx``), and a timestep ``dt``.
+
+1. The cells performing the calculation are limited to the real cells.  The density, inverse of the density, the velocities in each direction, the total energy, gas energy, and kinetic energies are defined from the conserved variables.
+
+2. The pressure is computed using ``Get_Pressure_From_DE()``, which receives the total energy, the gas internal energy computed from the total energy and kinetic energy, the advected gas energy, and gamma.
+
+3. The divergence of the velocity field is computed by retrieving the +/- conserved momenta and densities. The quantity (1/2) * P * (dt/dx * dv/dx + dt/dy * dv/dy + dt/dz*dv/dz) is added to the ``(n_fields -1)`` conserved variable.
+
 
