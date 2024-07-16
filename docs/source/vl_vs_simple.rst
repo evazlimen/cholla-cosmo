@@ -83,6 +83,16 @@ Overview of Dual Energy functions
 
 There are four main dual energy functions that are used by the integrators. Here we provide a brief description of each function.
 
+For purposes of cosmological simulations we note that
+
+* ``Get_Pressure_From_DE()`` is essentially equivalent to returning the pressure from the currently active advected dual energy.
+
+* ``Partial_Update_Advected_Internal_Energy_3D()`` effectively uses the advected dual energy to compute a pressure and then updates the advected internal energy according to the pressure and a gradient of the velocity.
+
+* ``Select_Internal_Energy_3D()`` determines whether to store the internal energy computed from the total or the advected dual internal energy.  The latter happens only when the int energy computed from the total is relatively large.
+
+* ``Sync_Energies_3D()`` just updates the total energy to be the kinetic energy plus the current value of the advected internal energy.
+
 ``Get_Pressure_From_DE()``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -121,6 +131,9 @@ This function is defined in ``hydro/hydro_cuda.cu``.  It takes the conserved var
 4. If the internal energy computed from the total is greater than ``eta_1 * E``, *OR* the total energy is greater than ``eta_2 * E_max``, then the operative internal energy is the internal energy computed from the total.  Otherwise, used the advected dual internal energy as the operative internal energy.
 
 5. The internal energy stored in the advected internal energy field in the conserved quantities is updated to the operative internal energy.
+
+
+Note that in ``global/global.h`` the criterion is set as ``#define DE_ETA_2 0.035``.  This means that if the total energy is greater than about 3.5% of the local max energy, use that.  The other condition is irrelevant in this case because it almost always fails since ``#define DE_ETA_1 10.0``.
 
 ``Sync_Energies_3D()``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
