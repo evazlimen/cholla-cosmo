@@ -24,3 +24,4 @@ Contents
    usage
    building_music_ics
    lux_test_calculation
+   vl_vs_simple

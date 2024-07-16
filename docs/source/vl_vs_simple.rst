@@ -86,6 +86,15 @@ There are four main dual energy functions that are used by the integrators. Here
 ``Get_Pressure_From_DE()``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+This function is defined in ``utils/hydro_utilities.h``.  It takes the total energy, the internal energy computed from the total and kinetic energy, the advected "dual" internal energy, and gamma.
+
+1. It sets ``Real eta = DE_ETA_1``.
+
+2. If the internal energy computed from the total energy is greater than eta * the total energy, use the total internal energy for the operative internal energy ``U``.  Otherwise use the advected dual energy for the operative internal energy ``U``.
+
+3. Return the pressure as ``P = U * (gamma-1.0)``, where ``U`` is the operative internal energy determined in part 2.
+
+Note that ``#ifdef COSMOLOGY`` then in ``global/global.h`` we ``#define DE_ETA_1 10.0``.  This means the advected internal energy is effectively always used?
 
 ``Partial_Update_Advected_Internal_Energy_3D()``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -96,6 +105,29 @@ This function is defined in ``hydro/hydro_cuda.cu``.  It takes a conserved varia
 
 2. The pressure is computed using ``Get_Pressure_From_DE()``, which receives the total energy, the gas internal energy computed from the total energy and kinetic energy, the advected gas energy, and gamma.
 
-3. The divergence of the velocity field is computed by retrieving the +/- conserved momenta and densities. The quantity (1/2) * P * (dt/dx * dv/dx + dt/dy * dv/dy + dt/dz*dv/dz) is added to the ``(n_fields -1)`` conserved variable.
+3. The divergence of the velocity field is computed by retrieving the +/- conserved momenta and densities. The quantity (1/2) * P * (dt/dx * dv + dt/dy * dv + dt/dz*dv) is added to the ``(n_fields -1)`` conserved variable.
 
+``Select_Internal_Energy_3D()``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This function is defined in ``hydro/hydro_cuda.cu``.  It takes the conserved variables as input.
+
+1. It sets ``Real eta_1 = DE_ETA_1`` and It sets ``Real eta_2 = DE_ETA_2``.
+
+2. For real cells, the density, velocity, total energy, internal energy computed from total and kinetic energy, and the advected dual energy are determined.
+
+3. The max ``E_max`` of the total energy in nearby cells are recorded.
+
+4. If the internal energy computed from the total is greater than ``eta_1 * E``, *OR* the total energy is greater than ``eta_2 * E_max``, then the operative internal energy is the internal energy computed from the total.  Otherwise, used the advected dual internal energy as the operative internal energy.
+
+5. The internal energy stored in the advected internal energy field in the conserved quantities is updated to the operative internal energy.
+
+``Sync_Energies_3D()``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This function is defined in ``hydro/hydro_cuda.cu``. It updates the total energy to reflect the kinetic energy + the currently operative internal energy.
+
+1. For real cells, find the density, inverse density, velocities, and the internal energy pulled from the operative internal energy.
+
+2. The total energy is synchronized to reflect the current kinetic energy and whatever internal energy is stored in the advected internal energy field.
 
