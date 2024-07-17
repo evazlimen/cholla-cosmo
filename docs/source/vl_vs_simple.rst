@@ -69,14 +69,13 @@ Algorithm
 
 10. If using dual energy, ``Partial_Update_Advected_Internal_Energy_3D()`` is called, using the previous conserved variables, the full timestep, and the half timestep integrated interface states. Then another ``GPU_Error_Check()``.
 
-11 The conserved variable array is updated ustin ghte full time step, the half step interface states and fluxes. This is performed by calling ``Update_Conserved_Variables_3D()``.  This updates ``dev_conserved``.
+11 The conserved variable array is updated using the full time step, the half step interface states and fluxes. This is performed by calling ``Update_Conserved_Variables_3D()``.  This updates ``dev_conserved``.
 
 12. ``GPU_Error_Check()`` is called.
 
 13. If using dual energy, we call ``Select_Internal_Energy_3D()`` and ``Synch_Energies_3D()`` using the updated conserved variables ``dev_conserved``.  A ``GPU_Error_Check()`` is called.
 
 .. _dual_energy:
-
 
 Overview of Dual Energy functions
 --------------------------
@@ -144,3 +143,28 @@ This function is defined in ``hydro/hydro_cuda.cu``. It updates the total energy
 
 2. The total energy is synchronized to reflect the current kinetic energy and whatever internal energy is stored in the advected internal energy field.
 
+.. _dual_energy_and_pmc
+
+Dual Energy and PMC
+---------------------
+
+As part of the VL integrator, the first step is to use PCM as input into the riemann solver to compute
+the first-order upwind fluxes. In ``reconstruction/pcm_cuda.h``, the ``PCM_Reconstruction`` function
+calls ``Conserved_2_Primitive`` which is defined in ``utils/hydro_utilities.h``.  In the computation
+of the primitive pressure for the states, the function ``Get_Pressure_From_DE()`` is used, which, for
+cosmology sims, means the advected internal energy is used to compute the pressure.
+
+.. _dual_energy_and_hllc
+
+Dual Energy and HLLC
+---------------------
+
+The PCM reconstruction is called in HLLC via ``Reconstruct_Interface_States()``, which uses ``Get_Pressure_From_DE()``. The function ``Get_Pressure_From_DE()`` is also called in ``riemann_solvers/hllc_cuda.cu``.
+
+
+.. _dual_energy_and_ppmp
+
+Dual Energy and PPMP
+---------------------
+
+The function ``Get_Pressure_From_DE()`` is called in ``reconstruction/ppmp_cuda.cu``.
