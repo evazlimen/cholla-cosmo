@@ -48,7 +48,7 @@ Algorithm
 
 1. Memory on the GPU is allocated to contain the left and right states on the x, y, and z cell interfaces (``Q_Lx``, ``Q_Rx``, ``Q_Ly``, ``Q_Ry``, etc.), the x, y, z fluxes (e.g., ``F_x``) and the device's conserved variables at the half time step (``dev_conserved_half``). -- *CHECK* on gravitational potential
 
-2. Compute the first order upwind fluxes. To do this, automatic launch paramters are specified using ``cuda_utilites::AutomaticLaunchParams static const hllc_pcm_launch_params()`` Then, the method ``Calculate_HLLC_Fluxes_CUDA<reconstruction::Kind::pcm, 0>)`` is called. This computes interface arrays for the primitive variables in each direction (``0`` in this example).
+2. Compute the first order upwind fluxes. To do this, automatic launch parameters are specified using ``cuda_utilities::AutomaticLaunchParams static const hllc_pcm_launch_params()`` Then, the method ``Calculate_HLLC_Fluxes_CUDA<reconstruction::Kind::pcm, 0>)`` is called. This computes interface arrays for the primitive variables in each direction (``0`` in this example).
 
 3. ``GPU_Error_Check()`` is called.
 
@@ -168,3 +168,26 @@ Dual Energy and PPMP
 ---------------------
 
 The function ``Get_Pressure_From_DE()`` is called in ``reconstruction/ppmp_cuda.cu``.
+
+.. _remaining_issues
+
+Outstanding issues
+---------------------
+
+* In VL, should gravity be applied for the conserved variable half-step update?
+
+* In VL, should the advected internal energy be partially updated before the half-update with the extrapolated pressure and velocity divergence? Let's figure it out...
+
+So simple does PPMP to compute Q after a full time step, then does HLLC with PPMP using the conserved and PPMP-computed Q to calculate the fluxes F, then partial update of Internal Energy 3D with the full time step (doesn't actually use Q, just conserved and P from DE). The final conservative variable update is then computed with the full timestep.  Then DE selected and sync'd.
+
+Well, VL does an HLLC flux using PCM. THese fluxes are used to update the conserved variables by a half time step. PPMP is used to reconstruct the half-step updated conserved variables and a full timestep to compute new interface states Q. Then the half-step conserved variables and new interface states are used to compute fluxes F with HLLC+PPMP.
+
+There is then a partial update of the internal energies using the original conserved variables and the new interface states Q and a full timestep update. Note this doesn't actually use the interface states Q.
+
+The conserved variables are then updated with the new interface states Q and the fluxes F and the full timestep. Then DE selected and sync'd.
+
+-- I would have thought in VL that 
+  1. There would be an internal energy half update before the conserved variables are updated to the half time step.  This would be applied to dev_conserved_half.
+  2. There would be a dual energy selection and synch to the dev_conserved_half after the half update.
+
+* In VL, should DE be selected and synchronized at the half-step upate?
