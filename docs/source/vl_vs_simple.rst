@@ -191,3 +191,7 @@ The conserved variables are then updated with the new interface states Q and the
   2. There would be a dual energy selection and synch to the dev_conserved_half after the half update.
 
 * In VL, should DE be selected and synchronized at the half-step upate?
+
+Not sure this has much effect.  Trying to update the half-update step with a gravity term led to bad cells. Still wondering about current bad cells, but nonetheless could be tried.  It certainly didn't lead to the expected behavior.
+
+* Gravity is applied in a mixed update. Not sure I like that much.  There may need to be an update to the potential before doing the final energy and momentum update.
