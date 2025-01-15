@@ -13,6 +13,8 @@ The calculation of the optical depth is computed as the interaction cross sectio
 .. math::
     \tau_\nu = \int n_{\textrm{HI}} \sigma_\nu \textrm{d}r
 
+The optical depth is calculated along the line of sight of a 'skewer' - a line along the entire cosmological simulation box at a grid cell.
+
 
 .. _gaussian:
 Gaussian Profile
@@ -63,6 +65,47 @@ The error function argument is the contribution difference from the cell interfa
 2. Left interface: :math:`y_{\textrm{L},i} = (v_{j,H,L} - (v_{i,H,C} + u_i)) / v_{i,\textrm{th}}`
 
 The velocity with subscript :math:`H,R` refers to the Hubble flow along the right interface and :math:`H,L` is along the left interface. The velocity :math:`u` refers to the peculiar velocity.
+
+
+Implementation
+^^^^^^^^^^^^^^^
+
+We need three variables for each cell along the line of sight:
+
+1. density of hydrogen
+2. line of sight velocity
+3. temperature
+
+Once we know the cosmology information and the spacing between cells, the general pseudocode for the optical depth calculation is
+
+.. code-block:: python
+    
+    densityHI = # ionized Hydrogen density
+    velocity_pec = # line of sight velocity
+    temp = # temperature
+
+    n_los = # number of line of sight cells
+    dvHubble = # calculate Hubble flow through one cell using cosmology info
+
+    # create Hubble flow arrays along left, right, adn center of each cell
+    vHubbleL = range(0, n_los) * dvHubble
+    vHubbleR = vHubbleL + dvHubble
+    vHubbleC = vHubbleL + 0.5 * dvHubble
+
+    nHI = # calculate physical number density
+    velocity_phys = # add vHubbleC to velocity_pec to get physical velocity
+    doppler_param = # calculate doppler broadening term
+    
+    sigma_Lya = # create a function to hold all coefficients
+
+    tau_arr = # array of optical depths
+
+    for losid in range(n_los):
+        vH_L, vH_R = vHubbleL[losid], vHubbleR[losid]
+        y_L = (vH_L - velocity_phys) / doppler_param
+        y_R = (vH_R - velocity_phys) / doppler_param
+        tau_arr[losid] = (sigma_Lya) * np.sum(nHI * (erf(y_R) - erf(y_L)) )
+
 
 
 
