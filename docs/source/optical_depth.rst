@@ -79,6 +79,9 @@ We need three variables for each cell along the line of sight:
 Once we know the cosmology information and the spacing between cells, the general pseudocode for the optical depth calculation is
 
 .. code-block:: python
+
+    import numpy as np
+    from scipy.special import erf
     
     densityHI = # ionized Hydrogen density
     velocity_pec = # line of sight velocity
