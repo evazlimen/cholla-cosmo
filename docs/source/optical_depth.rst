@@ -91,7 +91,7 @@ Once we know the cosmology information and the spacing between cells, the genera
     dvHubble = # calculate Hubble flow through one cell using cosmology info
 
     # create Hubble flow arrays along left, right, adn center of each cell
-    vHubbleL = range(0, n_los) * dvHubble
+    vHubbleL = np.range(0, n_los) * dvHubble
     vHubbleR = vHubbleL + dvHubble
     vHubbleC = vHubbleL + 0.5 * dvHubble
 
