@@ -58,7 +58,7 @@ The setup file ``/lustre/orion/ast206/proj-shared/ics_dg/setup.andes.cce.sh`` ca
 Building MUSIC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now that we have all of the prerequisite software, we can finally build and compile the software. We can clone the `github repository<https://github.com/cosmo-sims/MUSIC2>`_
+Now that we have all of the prerequisite software, we can finally build and compile the software. We can clone the `github repository <https://github.com/cosmo-sims/MUSIC2>`_
 
 .. code-block:: console
 
