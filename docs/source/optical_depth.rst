@@ -17,7 +17,7 @@ The calculation of the optical depth is computed as the interaction cross sectio
 .. _gaussian:
 Gaussian Profile
 ----------
-We can follow `Villasenor et al. <https://ui.adsabs.harvard.edu/abs/2021ApJ...912..138V/abstract>`_ and `Lukic et al. <https://ui.adsabs.harvard.edu/abs/2015MNRAS.446.3697L/abstract>`_ in assuming that the Voigt profile is well-approximated by inhereiting only the Gaussian core, such that the cross section is
+We can follow `Villasenor et al. <https://ui.adsabs.harvard.edu/abs/2021ApJ...912..138V/abstract>`_ and `Lukic et al. <https://ui.adsabs.harvard.edu/abs/2015MNRAS.446.3697L/abstract>`_ in assuming that the Voigt profile is well-approximated by inheriting only the Gaussian core, such that the cross section is
 
 .. math::
    \sigma_\nu = \frac{\pi e^2}{m_e c} f_{12} \frac{1}{\Delta \nu_D}  \frac{1}{\pi^{1/2}} \exp\left(-x^2 \right)
@@ -60,7 +60,7 @@ We evaluate this integral analytically using the error function
 The error function argument is the contribution difference from the cell interface Hubble flow and the gas velocity. The arguments are
 
 1. Right interface: :math:`y_{\textrm{R},i} = (v_{j,H,R} - (v_{i,H,C} + u_i)) / v_{i,\textrm{th}}`
-2. Left interface: :math: `y_{\textrm{L},i} = (v_{j,H,L} - (v_{i,H,C} + u_i)) / v_{i,\textrm{th}}`
+2. Left interface: :math:`y_{\textrm{L},i} = (v_{j,H,L} - (v_{i,H,C} + u_i)) / v_{i,\textrm{th}}`
 
 The velocity with subscript :math:`H,R` refers to the Hubble flow along the right interface and :math:`H,L` is along the left interface. The velocity :math:`u` refers to the peculiar velocity.
 
