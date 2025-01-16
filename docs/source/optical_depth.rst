@@ -99,7 +99,7 @@ Once we know the cosmology information and the spacing between cells, the genera
     velocity_phys = # add vHubbleC to velocity_pec to get physical velocity
     doppler_param = # calculate doppler broadening term
     
-    sigma_Lya = # create a function to hold all coefficients
+    sigma_Lya = # create a variable to hold all coefficients
 
     tau_arr = # array of optical depths
 
@@ -108,6 +108,14 @@ Once we know the cosmology information and the spacing between cells, the genera
         y_L = (vH_L - velocity_phys) / doppler_param
         y_R = (vH_R - velocity_phys) / doppler_param
         tau_arr[losid] = (sigma_Lya) * np.sum(nHI * (erf(y_R) - erf(y_L)) )
+
+
+Implementation Speed Up
+^^^^^^^^^^^^^^^^^^^^^^^
+
+There is something that makes this previous implementation very not efficient. When taking a look at the argument to numpy's summation function, we notice that we multiply ``nHI``, an array of size ``n_los``, with the difference between the error functions. Once we convert the ionized Hydrogen density to a physical column density, the array does not change, and it has actual values throughout most of the array. 
+
+On the other hand, the `error function <https://en.wikipedia.org/wiki/Error_function>`_ is funky. Most of the fun changes actually occurs when :math:`x \sim 0`. When the argument is far from zero (:math:`|x| >> 1`), the output is approximated as :math:`\sgn(x) * 1`.
 
 
 
