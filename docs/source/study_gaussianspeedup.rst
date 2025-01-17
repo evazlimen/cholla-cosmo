@@ -1,12 +1,11 @@
 .. _study-gauss-speed:
-
 Gaussian Optical Depth Speedup
 =====
 
 .. _email_diego: digarza@ucsc.edu
 
-.. _general:
-   General
+.. _Overview:
+Overview
 -----------
 
 Most of the motivation comes from :ref:`opt-depth`. 
@@ -35,6 +34,10 @@ To study these effects with respect to resolution and skewer count, we run a tot
 6. :math:`1024^3` cells & `lya_skewers_stride=4` :math:`\rightarrow 196608` skewers
 
 We set skewer outputs at the following redshifts: 10. ,  9.5 ,  9. ,  8.5 ,  8. ,  7.5 ,  7. ,  6.5 ,  6. , 5.5 ,  5. ,  4.5 ,  4. ,  3.5 ,  3. ,  2.5 ,  2. ,  1.5 , 1. ,  0.95,  0.75,  0.5 , 0.25,  0.15, 0.1 , 0.05.
+
+
+Results
+___________________
 
 For each skewer output we 1) calculate the local optical depth, 2) calculate the flux power spectrum, and 3) calculate the relative difference against the on-the-fly flux power spectrum, showing the effect of using the following optical depth methods
 
@@ -98,3 +101,6 @@ Simulation 6 Results -- :math:`1024^3` cells & `lya_skewers_stride=4`
 .. image:: ../visualizations/gauss_speedup_study/1024_nstride4/PowerSpectraLogDiff_ALL.png
 
 
+
+Simulation Comparisons
+-------------------------------
