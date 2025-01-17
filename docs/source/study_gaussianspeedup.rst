@@ -39,11 +39,11 @@ We set skewer outputs at the following redshifts: 10. ,  9.5 ,  9. ,  8.5 ,  8. 
 For each skewer output we 1) calculate the local optical depth, 2) calculate the flux power spectrum, and 3) calculate the relative difference against the on-the-fly flux power spectrum, showing the effect of using the following optical depth methods
 
 1. Use the entire line of sight
-2. Use cells falling within :math:`3 v_{\textrm{th}}` of cell-centered Hubble flow velocity
-3. Use cells falling within :math:`5 v_{\textrm{th}}` of cell-centered Hubble flow velocity
-4. Use cells falling within :math:`8 v_{\textrm{th}}` of cell-centered Hubble flow velocity
-5. Use cells falling within :math:`10 v_{\textrm{th}}` of cell-centered Hubble flow velocity
-6. Use cells falling within :math:`12 v_{\textrm{th}}` of cell-centered Hubble flow velocity
+2. Use cells falling within :math:`3-v_{\textrm{th}}` of cell-centered Hubble flow velocity
+3. Use cells falling within :math:`5-v_{\textrm{th}}` of cell-centered Hubble flow velocity
+4. Use cells falling within :math:`8-v_{\textrm{th}}` of cell-centered Hubble flow velocity
+5. Use cells falling within :math:`10-v_{\textrm{th}}` of cell-centered Hubble flow velocity
+6. Use cells falling within :math:`12-v_{\textrm{th}}` of cell-centered Hubble flow velocity
 
 The full results are shown in the lux directory, so I will summarize by plotting the relative difference at some redshifts (6., 5.5, 5., 4.5, 4., 3.5, 3., 2.5, 2., 1.5, 1., 0.95) for each simulation.
 
@@ -51,7 +51,9 @@ The full results are shown in the lux directory, so I will summarize by plotting
 Simulation 1 Results -- :math:`512^3` cells & `lya_skewers_stride=16`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Results
+.. image:: ../visualizations/gauss_speedup_study/512_nstride16/PowerSpectraDiff_ALL.png
+
+.. image:: ../visualizations/gauss_speedup_study/512_nstride16/PowerSpectraLogDiff_ALL.png
 
 
 
