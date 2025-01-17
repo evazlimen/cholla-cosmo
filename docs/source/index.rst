@@ -26,3 +26,5 @@ Contents
    lux_test_calculation
    vl_vs_simple
    optical_depth
+   studies
+
