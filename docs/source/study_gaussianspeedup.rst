@@ -57,5 +57,44 @@ Simulation 1 Results -- :math:`512^3` cells & `lya_skewers_stride=16`
 
 
 
+Simulation 2 Results -- :math:`512^3` cells & `lya_skewers_stride=8`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../visualizations/gauss_speedup_study/512_nstride8/PowerSpectraDiff_ALL.png
+
+.. image:: ../visualizations/gauss_speedup_study/512_nstride8/PowerSpectraLogDiff_ALL.png
+
+
+
+Simulation 3 Results -- :math:`512^3` cells & `lya_skewers_stride=4`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../visualizations/gauss_speedup_study/512_nstride4/PowerSpectraDiff_ALL.png
+
+.. image:: ../visualizations/gauss_speedup_study/512_nstride4/PowerSpectraLogDiff_ALL.png
+
+
+Simulation 4 Results -- :math:`1024^3` cells & `lya_skewers_stride=16`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../visualizations/gauss_speedup_study/1024_nstride16/PowerSpectraDiff_ALL.png
+
+.. image:: ../visualizations/gauss_speedup_study/1024_nstride16/PowerSpectraLogDiff_ALL.png
+
+
+Simulation 5 Results -- :math:`1024^3` cells & `lya_skewers_stride=8`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../visualizations/gauss_speedup_study/1024_nstride8/PowerSpectraDiff_ALL.png
+
+.. image:: ../visualizations/gauss_speedup_study/1024_nstride8/PowerSpectraLogDiff_ALL.png
+
+
+Simulation 6 Results -- :math:`1024^3` cells & `lya_skewers_stride=4`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../visualizations/gauss_speedup_study/1024_nstride4/PowerSpectraDiff_ALL.png
+
+.. image:: ../visualizations/gauss_speedup_study/1024_nstride4/PowerSpectraLogDiff_ALL.png
 
 
