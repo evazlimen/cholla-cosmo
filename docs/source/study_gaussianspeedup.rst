@@ -179,5 +179,34 @@ Total Time -- :math:`1024^3` cells
 .. image:: ../visualizations/gauss_speedup_study/1024_tottime.png
 
 
+Discussion
+^^^^^^^^^^^^
+
+These are the most impactful plots that we were seeking from this study. We find that simulations with :math:`512^3` cells, the average time per skewer is around :math:`0.017 \pm 0.003` seconds when using the entire line of sight and :math:`0.008 \pm 0.001` seconds when using any :math:`v_{\textrm{th}}` window. Likewise for simulations with :math:`1024^3` cells, the entire line of sight takes :math:`0.05 \pm 0.01` seconds, else :math:`0.02 \pm 0.005` seconds.
+
+We find that the average time per skewer and its scatter stays pretty constant over redshift. There is an every slight increase in the time for larger window.
+
+The total time it takes to compute the optical depths for all skewers is also constant with redshift and doesnt change much when increasing the window size. For the simulations with :math:`512^3` cells, the entire line of sight takes about twice as long for any given stride number. Likewise for simulations with :math:`1024^3` cells, the entire line of sight takes about 2.78 as when using any window size for any given stride number.
+
+
+Comparing Entire Line of Sight with Other Methods
+----------------------------------------------------
+
+Sounds great! We've covered all but the final question. We know from the flux power spectra that the calculations when using the entire line of sight are quite accurate to one part in :math:`10^4` for all k-modes. In effect, we would like to compare how different number of :math:`v_{\textrm{th}}` units around the mean compares to the entire line of sight. To do this, we plot the distribution of the median optical depth along a skewer and its relative difference for every simulation. The following plots show the log probability for a skewer to land in a given :math:`\tau_{\rm{med}}` or :math:`D[\tau_{\rm{med}}]` bin given its redshift. Instead of normalizing by the total number of data points at a given redshift, we normalize by the total number of skewers, in order to account for data outside the given bins. 
+
+
+Simulation 1 Results -- :math:`512^3` cells & `lya_skewers_stride=16`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../visualizations/gauss_speedup_study/512_efftau_nstride16.png
+
+
+.. image:: ../visualizations/gauss_speedup_study/512_d_efftau_nstride16.png
+
+
+.. image:: ../visualizations/gauss_speedup_study/512_l_d_efftau_nstride16.png
+
+
+
 
 
