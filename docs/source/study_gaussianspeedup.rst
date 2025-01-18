@@ -104,7 +104,7 @@ Simulation 6 Results -- :math:`1024^3` cells & `lya_skewers_stride=4`
 Discussion
 ^^^^^^^^^^^^^
 
-The redshift evolution is more easily shown in the plots with logarithmic scale. The relative difference increases as a function of redshift for all except the entire line of sight -- it actually decreases over time. In general, the flux power spectrum we calculate under predicts until it hits zero around :math:`k \in (10^{-2}, 4\cdot10^{-2}) \textrm{s\ km}^{-1}`. For a set number of :math:`v_{\textrm{th}}`, the k-mode of that turnover is not a strong function of redshift. The k-mode turnover shifts to lower k-modes for higher :math:`v_{\textrm{th}}`.
+The redshift evolution is more easily shown in the plots with logarithmic scale. The relative difference increases as a function of redshift for all except the entire line of sight -- it actually decreases over time. In general, the flux power spectrum we calculate under predicts until it hits zero around :math:`k \in (10^{-2}, 4\cdot10^{-2}) \textrm{s km}^{-1}`. For a set number of :math:`v_{\textrm{th}}`, the k-mode of that turnover is not a strong function of redshift. The k-mode turnover shifts to lower k-modes for higher :math:`v_{\textrm{th}}`.
 
 For all simulations of the same cell number, having more skewers doesn't really decrease the relative difference at some redshift. It does create a smoother relative difference as a function of k-mode.
 
@@ -142,9 +142,41 @@ Mean Optical Depth -- :math:`1024^3` cells
 
 
 
+Discussion
+^^^^^^^^^^^^^^^^
+
+By eye, I cannot tell a difference between these plots. Having more or less skewers does not effect these plots all that much.
 
 
+Time Calculation Results
+--------------------------------
 
+Sounds good ! We've now covered Question 2 as well. The optical depth calculation seems to bring about similar statistics for the mean flux and optical depth. The flux power spectrum also bring about similar statistics, but with a larger relative difference for a smaller window of :math:`v_{\textrm{th}}`. 
+
+Now that the results are pretty similar, we would like to see any change in efficiency of the change in calculation method. To do this, we calculate 2 statistics at every redshift bin: the mean (with 1 standard deviation bands) time it took to calculate the local optical depth for a skewer and the total time it took to calculate the local optical depth for all skewers. We expect that the total time will be greater for those simulations that have a larger amount of skewers.
+
+Average Time -- :math:`512^3` cells
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../visualizations/gauss_speedup_study/512_avgtime.png
+
+
+Average Time -- :math:`1024^3` cells
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../visualizations/gauss_speedup_study/1024_avgtime.png
+
+
+Total Time -- :math:`512^3` cells
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../visualizations/gauss_speedup_study/512_tottime.png
+
+
+Total Time -- :math:`1024^3` cells
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../visualizations/gauss_speedup_study/1024_tottime.png
 
 
 
