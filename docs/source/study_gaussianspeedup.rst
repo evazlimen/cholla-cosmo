@@ -122,15 +122,18 @@ Mean Transmitted Flux -- :math:`512^3`
 
 .. image:: ../visualizations/gauss_speedup_study/512_meanF.png
 
+
 Mean Transmitted Flux -- :math:`1024^3`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: ../visualizations/gauss_speedup_study/1024_meanF.png
 
+
 Mean Optical Depth -- :math:`512^3`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: ../visualizations/gauss_speedup_study/512_meantau.png
+
 
 Mean Optical Depth -- :math:`1024^3`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
