@@ -266,3 +266,26 @@ Simulation 6 Results -- :math:`1024^3` cells & `lya_skewers_stride=4`
 
 .. image:: ../visualizations/gauss_speedup_study/1024_l_d_efftau_nstride4.png
 
+
+Discussion
+^^^^^^^^^^^^
+
+Once again, I cannot really tell the difference (by eye) for the effective optical depth calculated different ways for a specific simulation. 
+
+For all simulations, there is a bimodal distribution in redshift for the relative difference for the effective optical depth calcluated using a :math:`3-v_{\textrm{th}}` and :math:`5-v_{\textrm{th}}` window, best shown in the absolute value of the relative difference in log-space. The floor of the relative difference is also different: :math:`3-v_{textrm{th}}` floor is at :math:`\sim 10^6`, else the floor is at :math:`\sim 10^{-16}`.
+
+For a larger :math:`v_{\textrm{th}}` window, the distribution of the relative difference starts appearing at a larger redshift value.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
