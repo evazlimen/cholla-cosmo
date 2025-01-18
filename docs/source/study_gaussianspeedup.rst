@@ -272,12 +272,15 @@ Discussion
 
 Once again, I cannot really tell the difference (by eye) for the effective optical depth calculated different ways for a specific simulation. 
 
-For all simulations, there is a bimodal distribution in redshift for the relative difference for the effective optical depth calcluated using a :math:`3-v_{\textrm{th}}` and :math:`5-v_{\textrm{th}}` window, best shown in the absolute value of the relative difference in log-space. The floor of the relative difference is also different: :math:`3-v_{textrm{th}}` floor is at :math:`\sim 10^6`, else the floor is at :math:`\sim 10^{-16}`.
+For all simulations, there is a bimodal distribution in redshift for the relative difference for the effective optical depth calcluated using a :math:`3-v_{\textrm{th}}` and :math:`5-v_{\textrm{th}}` window, best shown in the absolute value of the relative difference in log-space. The floor of the relative difference is also different: :math:`3-v_{\textrm{th}}` floor is at :math:`\sim 10^{-16}`, else the floor is at :math:`\sim 10^{-16}`.
 
 For a larger :math:`v_{\textrm{th}}` window, the distribution of the relative difference starts appearing at a larger redshift value.
 
 
+Conclusion
+------------
 
+I struggle to interpret these results. I think that the approximation of using a window of :math:`v_{\textrm{th}}` units around the mean is a good approximation. The relative error between the two methods of calcluating the optical depth disagree at a very large amount at redshift 2, when the optical depth decreases quickly from :math:`\tau sim 10^{-2} - 10^{-1}`.
 
 
 
