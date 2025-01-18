@@ -207,6 +207,62 @@ Simulation 1 Results -- :math:`512^3` cells & `lya_skewers_stride=16`
 .. image:: ../visualizations/gauss_speedup_study/512_l_d_efftau_nstride16.png
 
 
+Simulation 2 Results -- :math:`512^3` cells & `lya_skewers_stride=8`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../visualizations/gauss_speedup_study/512_efftau_nstride8.png
 
 
+.. image:: ../visualizations/gauss_speedup_study/512_d_efftau_nstride8.png
+
+
+.. image:: ../visualizations/gauss_speedup_study/512_l_d_efftau_nstride8.png
+
+
+Simulation 3 Results -- :math:`512^3` cells & `lya_skewers_stride=4`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../visualizations/gauss_speedup_study/512_efftau_nstride4.png
+
+
+.. image:: ../visualizations/gauss_speedup_study/512_d_efftau_nstride4.png
+
+
+.. image:: ../visualizations/gauss_speedup_study/512_l_d_efftau_nstride4.png
+
+
+Simulation 4 Results -- :math:`1024^3` cells & `lya_skewers_stride=16`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../visualizations/gauss_speedup_study/1024_efftau_nstride16.png
+
+
+.. image:: ../visualizations/gauss_speedup_study/1024_d_efftau_nstride16.png
+
+
+.. image:: ../visualizations/gauss_speedup_study/1024_l_d_efftau_nstride16.png
+
+
+Simulation 5 Results -- :math:`1024^3` cells & `lya_skewers_stride=8`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../visualizations/gauss_speedup_study/1024_efftau_nstride8.png
+
+
+.. image:: ../visualizations/gauss_speedup_study/1024_d_efftau_nstride8.png
+
+
+.. image:: ../visualizations/gauss_speedup_study/1024_l_d_efftau_nstride8.png
+
+
+Simulation 6 Results -- :math:`1024^3` cells & `lya_skewers_stride=4`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../visualizations/gauss_speedup_study/1024_efftau_nstride4.png
+
+
+.. image:: ../visualizations/gauss_speedup_study/1024_d_efftau_nstride4.png
+
+
+.. image:: ../visualizations/gauss_speedup_study/1024_l_d_efftau_nstride4.png
 
