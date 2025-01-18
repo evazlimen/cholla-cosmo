@@ -37,7 +37,7 @@ We set skewer outputs at the following redshifts: 10. ,  9.5 ,  9. ,  8.5 ,  8. 
 
 
 Flux Power Spectrum Results
-____________________________
+----------------------------
 
 For each skewer output we 1) calculate the local optical depth, 2) calculate the flux power spectrum, and 3) calculate the relative difference against the on-the-fly flux power spectrum, showing the effect of using the following optical depth methods
 
@@ -112,33 +112,34 @@ For all simulations of the same cell number, having more skewers doesn't really 
 
 
 Mean Flux and Optical Depth Results
--------------------------------
+----------------------------------------
 
 Great ! We've covered Question 1, but what are the flux and optical depth calculations that lead to that flux power spectrum. To answer this, we plot the mean (with 1 standard deviation bands) transmitted flux and the associated optical depth from the mean transmitted flux. Since these plots are specific to the simulation, they are not included in the github repository, but can be found in the lux directory.
 
 
-Mean Transmitted Flux -- :math:`512^3`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mean Transmitted Flux -- :math:`512^3` cells
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: ../visualizations/gauss_speedup_study/512_meanF.png
 
 
-Mean Transmitted Flux -- :math:`1024^3`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mean Transmitted Flux -- :math:`1024^3` cells
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: ../visualizations/gauss_speedup_study/1024_meanF.png
 
 
-Mean Optical Depth -- :math:`512^3`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mean Optical Depth -- :math:`512^3` cells
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: ../visualizations/gauss_speedup_study/512_meantau.png
 
 
-Mean Optical Depth -- :math:`1024^3`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mean Optical Depth -- :math:`1024^3` cells
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: ../visualizations/gauss_speedup_study/1024_meantau.png
+
 
 
 
