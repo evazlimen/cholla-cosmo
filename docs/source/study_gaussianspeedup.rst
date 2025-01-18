@@ -36,8 +36,8 @@ To study these effects with respect to resolution and skewer count, we run a tot
 We set skewer outputs at the following redshifts: 10. ,  9.5 ,  9. ,  8.5 ,  8. ,  7.5 ,  7. ,  6.5 ,  6. , 5.5 ,  5. ,  4.5 ,  4. ,  3.5 ,  3. ,  2.5 ,  2. ,  1.5 , 1. ,  0.95,  0.75,  0.5 , 0.25,  0.15, 0.1 , 0.05.
 
 
-Results
-___________________
+Flux Power Spectrum Results
+____________________________
 
 For each skewer output we 1) calculate the local optical depth, 2) calculate the flux power spectrum, and 3) calculate the relative difference against the on-the-fly flux power spectrum, showing the effect of using the following optical depth methods
 
@@ -101,6 +101,49 @@ Simulation 6 Results -- :math:`1024^3` cells & `lya_skewers_stride=4`
 .. image:: ../visualizations/gauss_speedup_study/1024_nstride4/PowerSpectraLogDiff_ALL.png
 
 
+Discussion
+^^^^^^^^^^^^^
 
-Simulation Comparisons
+The redshift evolution is more easily shown in the plots with logarithmic scale. The relative difference increases as a function of redshift for all except the entire line of sight -- it actually decreases over time. In general, the flux power spectrum we calculate under predicts until it hits zero around :math:`k \in (10^{-2}, 4\cdot10^{-2}) \textrm{s\ km}^{-1}`. For a set number of :math:`v_{\textrm{th}}`, the k-mode of that turnover is not a strong function of redshift. The k-mode turnover shifts to lower k-modes for higher :math:`v_{\textrm{th}}`.
+
+For all simulations of the same cell number, having more skewers doesn't really decrease the relative difference at some redshift. It does create a smoother relative difference as a function of k-mode.
+
+
+
+
+Mean Flux and Optical Depth Results
 -------------------------------
+
+Great ! We've covered Question 1, but what are the flux and optical depth calculations that lead to that flux power spectrum. To answer this, we plot the mean (with 1 standard deviation bands) transmitted flux and the associated optical depth from the mean transmitted flux. Since these plots are specific to the simulation, they are not included in the github repository, but can be found in the lux directory.
+
+
+Mean Transmitted Flux -- :math:`512^3`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../visualizations/gauss_speedup_study/512_meanF.png
+
+Mean Transmitted Flux -- :math:`1024^3`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../visualizations/gauss_speedup_study/1024_meanF.png
+
+Mean Optical Depth -- :math::`512^3`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../visualizations/gauss_speedup_study/512_meantau.png
+
+Mean Optical Depth -- :math::`1024^3`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../visualizations/gauss_speedup_study/1024_meantau.png
+
+
+
+
+
+
+
+
+
+
+
