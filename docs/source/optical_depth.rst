@@ -1,4 +1,4 @@
-
+.. _opt-depth:
 Optical Depth Calculation
 =====
 
@@ -115,7 +115,7 @@ Implementation Speed Up
 
 There is something that makes this previous implementation very not efficient. When taking a look at the argument to numpy's summation function, we notice that we multiply ``nHI``, an array of size ``n_los``, with the difference between the error functions. Once we convert the ionized Hydrogen density to a physical column density, the array does not change, and it has actual values throughout most of the array. 
 
-On the other hand, the `error function <https://en.wikipedia.org/wiki/Error_function>`_ is funky. Most of the fun changes actually occurs when :math:`x \sim 0`. When the argument is far from zero (:math:`|x| >> 1`), the output is approximated as :math:`\rm{sgn}(x) * 1` so the error difference for velocities far from :math:`v_{\textrm{th}}` will be approximately zero. The physical interpretation is that the optical depth has most of its contribution occuring from cells with velocities near its thermal velocity. Indeed, most of the time ``nHI`` is being multiplied by an array that only has a handful of non-zero entries, but the code implementation is 1) multiplying two arrays of size ``n_los`` and 2) collapsing the array to one number with summation. Most of the time spent in the calculation of the optical depth is with the multiplication of the two ``n_los`` arrays.
+On the other hand, the `error function <https://en.wikipedia.org/wiki/Error_function>`_ is funky. Most of the fun changes actually occurs when :math:`x \sim 0`. When the argument is far from zero (:math:`|x| >> 1`), the output is approximated as :math:`\rm{sgn}(x) * 1` so the error difference for velocities far from :math:`v_{\textrm{th}}` will be approximately zero. The physical interpretation is that the optical depth has most of its contribution occuring from cells with velocities near its thermal velocity. Indeed, most of the time ``nHI`` is being multiplied by an array that only has a handful of non-zero entries, but the code implementation is 1) multiplying two arrays of size ``n_los`` and 2) collapsing the array to one number with summation. Most of the time spent in the calculation of the optical depth for each line of sight cell is with the multiplication of the two ``n_los`` arrays.
 
 In effect, we complete a small study to discuss the effects of approximating the optical depth by only including cells that are within a couple :math:`v_{\textrm{th}}` units away from the cell-centered Hubble flow. The code is changed as the following
 
@@ -162,7 +162,7 @@ In effect, we complete a small study to discuss the effects of approximating the
         y_R = (vH_R - vel_xsig) / doppler_xsig
         tau_arr[losid] = (sigma_Lya) * np.sum(nHI_xsig * (erf(y_R) - erf(y_L)) )
 
-In this study, we look at a couple factors:
+In this :ref:`study-gauss-speed`., we look at a couple factors:
 
 1. How does the on-the-fly flux power spectrum (from analysis files) compare with the post-simulation flux power spectrum for different number of :math:`v_{\textrm{th}}` units around the mean?
 2. How does the mean flux and mean optical depth change for different number of :math:`v_{\textrm{th}}` units around the mean?
