@@ -1,5 +1,5 @@
 .. _study-powspec-deltaFcalc:
-   Transmitted Flux Power Spectra - delta F Calculation
+Transmitted Flux Power Spectra - delta F Calculation
 =====
 
 .. _email_diego: digarza@ucsc.edu
