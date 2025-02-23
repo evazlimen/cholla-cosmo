@@ -280,7 +280,7 @@ For a larger :math:`v_{\textrm{th}}` window, the distribution of the relative di
 Conclusion
 ------------
 
-I struggle to interpret these results. I think that the approximation of using a window of :math:`v_{\textrm{th}}` units around the mean is a good approximation. The relative error between the two methods of calcluating the optical depth disagree at a very large amount at redshift 2, when the optical depth decreases quickly from :math:`\tau sim 10^{-2} - 10^{-1}`.
+I struggle to interpret these results. I think that the approximation of using a window of :math:`v_{\textrm{th}}` units around the mean is a good approximation. The relative error between the two methods of calcluating the optical depth disagree at a very large amount at redshift 2, when the optical depth decreases quickly from :math:`\tau \sim 10^{-2} - 10^{-1}`.
 
 
 
