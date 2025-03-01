@@ -1,4 +1,4 @@
-.. _study-gauss-speed:
+.. _study-gauss-speed-mpi:
 Gaussian Optical Depth Speedup - MPI
 =====
 
