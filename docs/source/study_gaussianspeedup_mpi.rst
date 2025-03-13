@@ -59,7 +59,7 @@ Total Time v Redshift -- :math:`512^3` cells
 Total Time v Redshift -- :math:`1024^3` cells
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../visualizations/gauss_speedup_mpie_study/1024_tottime.png
+.. image:: ../visualizations/gauss_speedup_mpi_study/1024_tottime.png
 
 
 
@@ -93,7 +93,7 @@ Total Time v N processors -- :math:`512^3` cells
 Total Time v N processors -- :math:`1024^3` cells
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../visualizations/gauss_speedup_mpie_study/1024_tottime_nprocs.png
+.. image:: ../visualizations/gauss_speedup_mpi_study/1024_tottime_nprocs.png
 
 
 Discussion
