@@ -8,7 +8,7 @@ Gaussian Optical Depth Speedup - MPI
 Overview
 -----------
 
-The calculation of the local optical depth for on-the-fly skewers are independent skewer-to-skewer. To help speedup the calculation, we use the python package `mpi4py https://mpi4py.readthedocs.io/en/stable/index.html`_ to parallelize the operation. The gaol of this study is to look at the time save of calculating the local optical depth along all three axis for every skewer using multiple processors.
+The calculation of the local optical depth for on-the-fly skewers are independent skewer-to-skewer. To help speedup the calculation, we use the python package `mpi4py <https://mpi4py.readthedocs.io/en/stable/index.html>`_ to parallelize the operation. The gaol of this study is to look at the time save of calculating the local optical depth along all three axis for every skewer using multiple processors.
 
 We are also interested in seeing how the time savings vary with the number of skewers that are used in the calculation -- inputed into the Cholla param file with `n_stride`.
 
