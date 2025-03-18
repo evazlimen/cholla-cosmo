@@ -12,7 +12,7 @@ The primary motivation for this study is that we would like to use Cholla to stu
 
 The goal of this study is to see whether this probe of distinguishing flux power spectra can show any cool relationships.
 
-The code to generate this study is found `here <https://github.com/astrodiegog/cholla_lya_scripts/tree/powspec-optdepthbin>`_.
+The code to generate this study is found `here <https://github.com/astrodiegog/cholla_lya_scripts/tree/97afcec118f6301907c80bfaaa01a394f2842a42>`_.
 
 This study was calculated on lux and the outputs can be found `/data/groups/comp-astro/digarza/fluxpowspec_optdepthstack/`.
 
