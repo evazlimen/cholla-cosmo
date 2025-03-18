@@ -41,7 +41,7 @@ Given some skewer directory and a list of output skewer files to look at, the ge
 3. Calculate the number of skewers in each quantile (roughly the same in each)
 4. Create array with information to index into local optical depth calculation in skewer files for each quantile
 5. Calculate the mean of the local fluxes for each quantile
-6. Calculate the $k$-modes along each axis
+6. Calculate the :math:`k`-modes along each axis
 7. Grab the local optical depth and calculate the flux power spectra along each axis for each quantile
 8. Profit
 
