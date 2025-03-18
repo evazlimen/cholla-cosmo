@@ -27,7 +27,7 @@ which corresponds to
 
 The goal of this study is to see whether this actually makes a difference in the flux power spectra. 
 
-The code to generate this study is found `here <https://github.com/astrodiegog/cholla_lya_scripts/tree/powspec-deltaFcalc>`_.
+The code to generate this study is found `here <https://github.com/astrodiegog/cholla_lya_scripts/tree/970929195be7a3ff602f5fa2830d60b6423d7ce2>`_.
 
 This study was calculated on lux and the outputs can be found `/data/groups/comp-astro/digarza/fluxpowspec_deltaFcalctest/`.
 

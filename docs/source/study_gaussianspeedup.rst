@@ -20,7 +20,7 @@ In this study, we look at a couple factors:
 
 We are also interested in seeing how these vary with the number of skewers that are used in the calculation -- inputed into the Cholla param file with `n_stride`.
 
-The code to generate this study is found `here <https://github.com/astrodiegog/cholla_lya_scripts/tree/speedup-study>`_.
+The code to generate this study is found `here <https://github.com/astrodiegog/cholla_lya_scripts/tree/6ea4fd07c7e4a20e6cc7a67db15f810805493253>`_.
 
 This study was calculated on lux and the outputs can be found `/data/groups/comp-astro/digarza/optdepth_skewtest`.
 

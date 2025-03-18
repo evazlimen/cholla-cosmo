@@ -12,7 +12,7 @@ The calculation of the local optical depth for on-the-fly skewers are independen
 
 We are also interested in seeing how the time savings vary with the number of skewers that are used in the calculation -- inputed into the Cholla param file with `n_stride`.
 
-The code to generate this study is found `here <https://github.com/astrodiegog/cholla_lya_scripts/tree/speedup-study-mpi>`_.
+The code to generate this study is found `here <https://github.com/astrodiegog/cholla_lya_scripts/tree/f7e2c374eacfac7d618b37b4f06612766d9ae8d9>`_.
 
 This study was calculated on lux and the outputs can be found `/data/groups/comp-astro/digarza/optdepth_skewtest_mpi`.
 
