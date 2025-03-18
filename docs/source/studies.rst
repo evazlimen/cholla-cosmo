@@ -14,4 +14,6 @@ Speeding up calculation of optical depth with many processors using MPI, :ref:`s
 
 Slightly changing the flux overdensity calculation for the transmitted flux power spectrum, :ref:`study-powspec-deltaFcalc`.
 
+Binning the transmitted flux power spectrum by the effective optical depth (median optical depth along a skewer), :ref:`study-powspec-optdepthbin`.
+
 
